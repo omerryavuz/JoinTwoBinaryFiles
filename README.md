@@ -1,2 +1,0 @@
-Merging Two Binary File
-=======================
