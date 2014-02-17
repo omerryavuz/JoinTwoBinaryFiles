@@ -1,0 +1,29 @@
+<project name="bnljoin" basedir=".">
+	<property name="src.dir" value="src"/>
+	<property name="build.dir" value="build"/>
+
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+	</target>
+	
+	<target name="clean" >
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<echo message="Compiling...." />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" />
+	</target>
+	
+	<target name="run">
+		<java fork="yes"
+			className="bnljoin.BNLJoin">
+			<arg line="${Relation1}" />
+			<arg line="${Relation2}" />
+			<arg line="${Join}" />
+			<arg line="${MemorySize}" />
+			<arg line="${AttributeName}" />
+		</java>
+	</target>
+</project>
+
